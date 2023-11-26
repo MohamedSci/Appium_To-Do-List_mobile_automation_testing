@@ -3,9 +3,9 @@
   "platformVersion": "13",
   "deviceName": "RF8W30AC31F",
   "automationName": "UiAutomator2",
-  "app": "D:\\projects\\Appium\\Appium_Calculator\\src\\test\\resources\\ApiDemos-debug.apk",
+//  "app": "D:\\projects\\Appium\\Appium_Calculator\\src\\test\\resources\\ApiDemos-debug.apk",
   "noReset": true,
   "fullReset": false,
-  "appPackage": "io.appium.android.apis",
-  "appActivity": "io.appium.android.apis.ApiDemos"
+  "appPackage": "com.featheredteam.team_app",
+  "appActivity": "com.featheredteam.team_app/.MainActivity"
 }
