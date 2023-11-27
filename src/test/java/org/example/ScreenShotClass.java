@@ -10,9 +10,8 @@ import java.util.*;
 public class ScreenShotClass extends LandingPageTest{
 
     // A function to take Screenshot
-    public void getPageScreenshot(String path_screenshot) throws IOException{
+    public  void getPageScreenshot(String path_screenshot, String filename) throws IOException{
         File srcFile=driver.getScreenshotAs(OutputType.FILE);
-        String filename= UUID.randomUUID().toString();
         File targetFile=new File(path_screenshot + filename +".jpg");
         FileHandler.copy(srcFile,targetFile);
     }
