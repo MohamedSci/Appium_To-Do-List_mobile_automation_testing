@@ -24,31 +24,25 @@ import java.time.*;
 
 public class LandingPageTest {
 
-    private final String menuItemNamePlaceholder = "#menuItemName";
-    private final String menuItemXpath = "//android.widget.TextView[@content-desc=\""
-                                            + menuItemNamePlaceholder + "\"]";
-
     public AndroidDriver driver;
     public WebDriverWait wait;
     String PROJECT_ROOT = System.getProperty("user.dir");
-
     SupportClass supportClass = new SupportClass();
     @BeforeClass
     public void setup() throws MalformedURLException {
-        String ANDROID_APK_PATH = "/src/test/resources/todolist_4.30_Apkpure.xapk";
-
+        String ANDROID_APK_PATH = "/src/test/resources/ToDo_1.24_Apkpure.apk";
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "RF8W30AC31F");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "13");
-//        caps.setCapability("appPackage", "com.featheredteam.team_app");
-//        caps.setCapability("appActivity", "com.featheredteam.team_app/.MainActivity");
-        caps.setCapability("noReset", true);// Clears the app data, such as its cache
+//        caps.setCapability("appPackage", "com.splendapps.splendo");
+//        caps.setCapability("appActivity", "com.splendapps.splendo/.MainActivity");
+        caps.setCapability("noReset", false);// Clears the app data, such as its cache
         caps.setCapability("fullReset", false);// ReInstall the app again
         caps.setCapability("automationName","UiAutomator2");
         caps.setCapability("app", new File(PROJECT_ROOT + ANDROID_APK_PATH).getAbsolutePath());
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:6623 /wd/hub"), caps);
+        driver = new AndroidDriver(new URL("http://127.0.0.1:7878/wd/hub"), caps);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
