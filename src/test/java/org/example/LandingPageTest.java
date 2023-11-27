@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.*;
 import org.testng.*;
 import org.testng.annotations.*;
 
-import java.io.*;
 import java.net.*;
 import java.time.*;
 
@@ -32,20 +31,20 @@ public class LandingPageTest {
 
     @BeforeClass
     public void setup() throws MalformedURLException {
-        String PROJECT_ROOT = System.getProperty("user.dir");
-        String ANDROID_APK_PATH = "/src/test/resources/ApiDemos.apk";
+//        String PROJECT_ROOT = System.getProperty("user.dir");
+//        String ANDROID_APK_PATH = "/src/test/resources/ApiDemos.apk";
+//        caps.setCapability("app", new File(PROJECT_ROOT + ANDROID_APK_PATH).getAbsolutePath());
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "RF8W30AC31F");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "13");
-//        caps.setCapability("app", new File(PROJECT_ROOT + ANDROID_APK_PATH).getAbsolutePath());
         caps.setCapability("appPackage", "com.featheredteam.team_app");
         caps.setCapability("appActivity", "com.featheredteam.team_app/.MainActivity");
-        caps.setCapability("noReset", true);
-        caps.setCapability("fullReset", false);
+        caps.setCapability("noReset", true);// Clears the app data, such as its cache
+        caps.setCapability("fullReset", false);// ReInstall the app again
         caps.setCapability("automationName","UiAutomator2");
-        driver = new AndroidDriver(new URL("http://127.0.0.1:6279/wd/hub"), caps);
+        driver = new AndroidDriver(new URL("http://127.0.0.1:6623 /wd/hub"), caps);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 

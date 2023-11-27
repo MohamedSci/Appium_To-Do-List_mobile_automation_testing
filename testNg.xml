@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="Big5" ?>
 <Suite name="Calculator_Operations">
     <Classes>
-        <class></class>
+        <class>test.LandingPageTest</class>
+        <class>test.UpdateProfile</class>
     </Classes>
 
 </Suite>
