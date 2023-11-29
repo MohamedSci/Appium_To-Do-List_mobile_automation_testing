@@ -22,8 +22,7 @@ public class AddTaskTest extends AppTest{
 
     public void FileReaderFun() {
         try {
-            CSVReader _reader = new CSVReader(new FileReader(CSV_file));
-            reader = _reader;
+            reader = new CSVReader(new FileReader(CSV_file));
         } catch (Exception e) {
             System.out.println("Exception $e");
         }
