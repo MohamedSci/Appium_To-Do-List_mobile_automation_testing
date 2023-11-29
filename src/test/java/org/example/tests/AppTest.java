@@ -10,6 +10,7 @@ import org.testng.annotations.*;
 import java.io.*;
 import java.net.*;
 import java.time.*;
+import java.util.concurrent.*;
 
 /**
  * Project Name    : first_appium_test
@@ -25,7 +26,8 @@ public class AppTest {
 
     public static AndroidDriver driver;
 
-    public WebDriverWait wait;
+    public static WebDriverWait wait;
+
     String PROJECT_ROOT = System.getProperty("user.dir");
     SupportClass supportClass = new SupportClass();
 
@@ -41,7 +43,7 @@ public class AppTest {
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("app", new File(PROJECT_ROOT + ANDROID_APK_PATH).getAbsolutePath());
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:8844/wd/hub"), caps);
+        driver = new AndroidDriver(new URL("http://127.0.0.1:7778/wd/hub"), caps);
         System.out.printf("The driver Session Id %s%n", driver.getSessionId());
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
