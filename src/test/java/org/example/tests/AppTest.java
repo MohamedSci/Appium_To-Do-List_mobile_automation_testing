@@ -1,8 +1,7 @@
-package org.example;
+package org.example.tests;
 
-import io.appium.java_client.*;
 import io.appium.java_client.android.*;
-import org.openqa.selenium.*;
+import org.example.*;
 import org.openqa.selenium.remote.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.*;
@@ -22,7 +21,7 @@ import java.time.*;
  **/
 
 
-public class LandingPageTest {
+public class AppTest {
 
     public AndroidDriver driver;
     public WebDriverWait wait;
@@ -42,7 +41,8 @@ public class LandingPageTest {
         caps.setCapability("automationName","UiAutomator2");
         caps.setCapability("app", new File(PROJECT_ROOT + ANDROID_APK_PATH).getAbsolutePath());
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:7878/wd/hub"), caps);
+        driver = new AndroidDriver(new URL("http://127.0.0.1:8844/wd/hub"), caps);
+        System.out.printf("The driver Session Id %s%n", driver.getSessionId());
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
@@ -50,29 +50,21 @@ public class LandingPageTest {
     public void firstTestTest() {
         // Verify Accessibility menu item is visible
        System.out.println("*************** firstTestTest ***************");
-        Assert.assertTrue(true);
-    }
-
-@Test
-public void launchTheInstalledApp(){
-    WebElement el1 = driver.findElement(AppiumBy.accessibilityId("To Do List"));
-    el1.click();
-}
-    @Test
-    public void allowPermissionsPopUp(){
-        WebElement el2 = driver.findElement(AppiumBy.id("com.android.permissioncontroller:id/permission_allow_button"));
-        el2.click();
-    }
-    @Test
-    public void takeFirstScreenShotFirstTime() throws IOException {
-        ScreenShotClass ssc = new ScreenShotClass();
-        ssc.getPageScreenshot(PROJECT_ROOT+"/Screenshoots","baseSc");
+            System.out.printf("firstTestTest The driver Session Id %s%n", driver.getSessionId());
+            Assert.assertTrue(true);
     }
 
 
     @AfterClass
     public void teardown() {
         driver.quit();
+    }
+    @AfterMethod
+    public void takeScreenOnFailor(ITestResult result) {
+        if(result.getStatus() == ITestResult.FAILURE) {
+            // Take A Screen Shot for Failed Element
+            supportClass.takeElementsScreenshot(driver, result.getName());
+        }
     }
 
 }

@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.tests.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.io.*;
 
@@ -7,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.io.*;
 import java.util.*;
-public class ScreenShotClass extends LandingPageTest{
+public class ScreenShotClass extends AppTest {
 
     // A function to take Screenshot
     public  void getPageScreenshot(String path_screenshot, String filename) throws IOException{
