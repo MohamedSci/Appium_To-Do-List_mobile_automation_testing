@@ -1,6 +1,5 @@
 ------------------------------------------------------------------------------------------------------
-appium server -p 4723 -a 127.0.0.1 -pa /wd/hub
-appium server -p 6623 -a 127.0.0.1 -pa /wd/hub
+appium server -p 7778 -pa /wd/hub --allow-cors
 ------------------------------------------------------------------------------------------------------
 Appium >> Testing Steps of Complete Action Scenario has multiple Sections
 

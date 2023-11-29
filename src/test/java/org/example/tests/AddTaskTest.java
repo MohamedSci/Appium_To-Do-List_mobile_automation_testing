@@ -5,6 +5,7 @@ import org.example.*;
 import org.example.Pages.*;
 import org.testng.*;
 import org.testng.annotations.*;
+import org.testng.asserts.*;
 
 import java.io.*;
 
@@ -50,11 +51,11 @@ public class AddTaskTest extends AppTest{
             Thread.sleep(200);
             sc.writeToElement(taskPage.getTagIn(), tagStr);
             taskPage.getButton1().click();
-            Thread.sleep(400);
+            Thread.sleep(500);
             taskPage.getButtonStartDate().click();
-            Thread.sleep(200);
+            Thread.sleep(500);
             taskPage.getNextMonth().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             taskPage.getStartDayChosen().click();
             Thread.sleep(200);
             taskPage.getButton1().click();
@@ -62,27 +63,28 @@ public class AddTaskTest extends AppTest{
             taskPage.getButtonDeadline().click();
             Thread.sleep(200);
             taskPage.getEl13().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             taskPage.getDate_picker_header_year().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             taskPage.getYearChosen().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             taskPage.getNextMonth().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             taskPage.getEndDayChosen().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             taskPage.getButton1().click();
             Thread.sleep(200);
             taskPage.getEditTextPriority().click();
             Thread.sleep(200);
             taskPage.getMediumPriority().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             taskPage.getButton1().click();
             Thread.sleep(200);
             taskPage.getAction_save().click();
-            Thread.sleep(200);
+            Thread.sleep(300);
             int endTasksCount =homePage.getALlPagesCheckBoxes().size();
             System.out.printf("endTasksCount %d \n",endTasksCount);
+            softAssert.assertEquals(endTasksCount , initialTasksCount+1);
         }
 
     }

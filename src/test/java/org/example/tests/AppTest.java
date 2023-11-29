@@ -6,6 +6,7 @@ import org.openqa.selenium.remote.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.*;
 import org.testng.annotations.*;
+import org.testng.asserts.*;
 
 import java.io.*;
 import java.net.*;
@@ -30,6 +31,7 @@ public class AppTest {
 
     String PROJECT_ROOT = System.getProperty("user.dir");
     SupportClass supportClass = new SupportClass();
+    SoftAssert softAssert = new SoftAssert();
 
     @BeforeSuite
     public void setup() throws MalformedURLException {
@@ -38,7 +40,7 @@ public class AppTest {
         caps.setCapability("deviceName", "RF8W30AC31F");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "13");
-        caps.setCapability("noReset", false);// Clears the app data, such as its cache
+        caps.setCapability("noReset", true);// Clears the app data, such as its cache
         caps.setCapability("fullReset", false);// ReInstall the app again
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("app", new File(PROJECT_ROOT + ANDROID_APK_PATH).getAbsolutePath());
