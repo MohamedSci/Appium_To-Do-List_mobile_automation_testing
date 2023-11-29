@@ -5,6 +5,5 @@
   "automationName": "UiAutomator2",
   "noReset": true,
   "fullReset": false,
-  "appPackage": "com.featheredteam.team_app",
-  "appActivity": "com.featheredteam.team_app/.MainActivity"
+  "app": "C:\\Users\\moham\\IdeaProjects\\Appium_To-Do-List_mobile_automation_testing\\src\\test\\resources\\ToDo_1.24_Apkpure.apk"
 }
