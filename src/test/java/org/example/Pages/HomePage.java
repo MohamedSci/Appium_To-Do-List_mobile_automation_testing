@@ -5,9 +5,12 @@ import org.example.tests.*;
 import org.openqa.selenium.*;
 public class HomePage extends AppTest {
 
-    WebElement fab = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/fab"));
+public HomePage (){
+    super();
+}
 
     public WebElement getFab() {
-        return fab;
+        System.out.printf("HomePage getFab The driver Session Id %s%n", super.driver.getSessionId());
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/fab"));
     }
 }

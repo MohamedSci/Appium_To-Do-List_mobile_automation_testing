@@ -18,22 +18,20 @@ public class AddTaskTest extends AppTest{
     String[] csvCell;
     // CSVReader reader ;
     // get path of CSV file
-    String CSV_file = System.getProperty("user.dir") + "/src/test/java/data/UserData.csv";
+    String CSV_file = System.getProperty("user.dir") + "/src/test/java/org/example/data/note_appium.csv";
 
     public void FileReaderFun() {
         try {
             CSVReader _reader = new CSVReader(new FileReader(CSV_file));
-            if (_reader != null) {
-                reader = _reader;
-            }
+            reader = _reader;
         } catch (Exception e) {
             System.out.println("Exception $e");
         }
     }
     @Test
     public void addTaskTest() throws IOException {
+        FileReaderFun();
         while ((csvCell = reader.readNext()) != null) {
-            FileReaderFun();
             titStr = csvCell[0];
             noteStr = csvCell[1];
             tagStr = csvCell[2];

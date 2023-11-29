@@ -24,6 +24,7 @@ import java.time.*;
 public class AppTest {
 
     public AndroidDriver driver;
+
     public WebDriverWait wait;
     String PROJECT_ROOT = System.getProperty("user.dir");
     SupportClass supportClass = new SupportClass();

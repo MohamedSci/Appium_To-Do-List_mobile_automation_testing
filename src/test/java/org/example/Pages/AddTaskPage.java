@@ -7,92 +7,74 @@ import org.openqa.selenium.*;
 public class AddTaskPage extends AppTest {
 
     public WebElement getTitIn() {
-        return titIn;
+        System.out.printf("AddTaskPage getTitIn The super.driver Session Id %s%n", super.driver.getSessionId());
+
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextTitre"));
     }
 
     public WebElement getNoteIn() {
-        return noteIn;
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextNote"));
     }
 
     public WebElement getEditTag() {
-        return editTag;
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextTag"));
     }
 
     public WebElement getEl5() {
-        return el5;
+        return super.driver.findElement(AppiumBy.xpath("//android.widget.CheckedTextView[@resource-id=\"android:id/text1\" and @text=\"Work\"]"));
     }
 
     public WebElement getTagIn() {
-        return tagIn;
+        return super.driver.findElement(AppiumBy.className("android.widget.EditText"));
     }
 
     public WebElement getButton1() {
-        return button1;
+        return super.driver.findElement(AppiumBy.id("android:id/button1"));
     }
 
     public WebElement getButtonStartDate() {
-        return buttonStartDate;
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/buttonStartDate"));
     }
 
     public WebElement getNextMonth() {
-        return nextMonth;
+        return super.driver.findElement(AppiumBy.accessibilityId("Next month"));
     }
 
     public WebElement getStartDayChosen() {
-        return startDayChosen;
+        return super.driver.findElement(AppiumBy.accessibilityId("03 December 2023"));
     }
 
     public WebElement getButtonDeadline() {
-        return buttonDeadline;
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/buttonDeadline"));
     }
 
     public WebElement getEl13() {
-        return el13;
+        return super.driver.findElement(AppiumBy.id("android:id/date_picker_header_date"));
     }
 
     public WebElement getDate_picker_header_year() {
-        return date_picker_header_year;
+        return super.driver.findElement(AppiumBy.id("android:id/date_picker_header_year"));
     }
 
     public WebElement getYearChosen() {
-        return yearChosen;
+        return super.driver.findElement(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"android:id/text1\" and @text=\"2024\"]"));
     }
 
     public WebElement getEndDayChosen() {
-        return endDayChosen;
+        return super.driver.findElement(AppiumBy.accessibilityId("01 January 2025"));
     }
 
     public WebElement getEditTextPriority() {
-        return editTextPriority;
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextPriority"));
     }
 
     public WebElement getMediumPriority() {
-        return mediumPriority;
+        return super.driver.findElement(AppiumBy.xpath("//android.widget.CheckedTextView[@resource-id=\"android:id/text1\" and @text=\"Medium\"]"));
     }
 
     public WebElement getAction_save() {
-        return action_save;
+        return super.driver.findElement(AppiumBy.id("com.jeffprod.todo:id/action_save"));
     }
-
-    WebElement titIn = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextTitre"));
-    WebElement noteIn = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextNote"));
-    WebElement editTag = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextTag"));
-    WebElement el5 = driver.findElement(AppiumBy.xpath("//android.widget.CheckedTextView[@resource-id=\"android:id/text1\" and @text=\"Work\"]"));
-    WebElement tagIn = driver.findElement(AppiumBy.className("android.widget.EditText"));
-    WebElement button1 = driver.findElement(AppiumBy.id("android:id/button1"));
-    WebElement buttonStartDate = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/buttonStartDate"));
-    WebElement nextMonth = driver.findElement(AppiumBy.accessibilityId("Next month"));
-    WebElement startDayChosen = driver.findElement(AppiumBy.accessibilityId("03 December 2023"));
-    WebElement buttonDeadline = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/buttonDeadline"));
-    WebElement el13 = driver.findElement(AppiumBy.id("android:id/date_picker_header_date"));
-    WebElement date_picker_header_year = driver.findElement(AppiumBy.id("android:id/date_picker_header_year"));
-    WebElement yearChosen = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"android:id/text1\" and @text=\"2024\"]"));
-    WebElement endDayChosen = driver.findElement(AppiumBy.accessibilityId("01 January 2025"));
-    WebElement editTextPriority = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/editTextPriority"));
-    WebElement mediumPriority = driver.findElement(AppiumBy.xpath("//android.widget.CheckedTextView[@resource-id=\"android:id/text1\" and @text=\"Medium\"]"));
-    WebElement action_save = driver.findElement(AppiumBy.id("com.jeffprod.todo:id/action_save"));
-
-
 
 
 
