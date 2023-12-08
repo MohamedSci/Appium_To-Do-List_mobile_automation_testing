@@ -1,6 +1,9 @@
 ------------------------------------------------------------------------------------------------------
 appium server -p 7778 -pa /wd/hub --allow-cors
 ------------------------------------------------------------------------------------------------------
+Appium-Inspector-windows-2023.11.1
+------------------------------------------------------------------------------------------------------
+
 Appium >> Testing Steps of Complete Action Scenario has multiple Sections
 
 1. @Test >> Test The Launching App Is Successful >> Global Project step
