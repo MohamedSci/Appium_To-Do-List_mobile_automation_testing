@@ -139,3 +139,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - A **Maven** build setup is used for dependency management and running tests.
 - Sample desired capabilities and test example included to help new contributors get started.
 - Reporting configuration can be enhanced with tools like **Extent Reports** if desired.
+
+## [Buy me a Coffee☕](<https://ko-fi.com/mohamedsaidibrahim>)
+
+If you enjoy this content and want to support me, feel free to [buy me a coffee](<https://ko-fi.com/mohamedsaidibrahim>)
